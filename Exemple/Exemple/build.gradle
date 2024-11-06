@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // Dependencia para Reactor Core
+    implementation 'io.projectreactor:reactor-core:3.5.0'
+
+    // Dependencia para Reactor Test (opcional, solo si planeas hacer pruebas con flujos reactivos)
+    testImplementation 'io.projectreactor:reactor-test:3.5.0'
+
+    // Dependencias para pruebas unitarias
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+}
+
+test {
+    useJUnitPlatform()
+}
